@@ -36,3 +36,20 @@ CREATE TABLE gas_station_fuel_type(
     REFERENCES fuel_types(id)
 );
 show tables
+
+SELECT gsb.name, gsb.address FROM  gas_station_branch gsb
+LEFT JOIN gas_station gs on gs.id=gsb.gas_station_id
+WHERE gs.name LIKE "%Gazprom%"
+
+
+SELECT 
+  b.name AS branch_name,
+  b.address,
+  f.name AS fuel_name,
+  gst.is_exists
+FROM gas_station_branch b
+LEFT JOIN gas_station_fuel_type gst 
+  ON gst.gas_station_branch_id = b.id
+LEFT JOIN fuel_types f 
+  ON f.id = gst.fuel_type_id
+WHERE gst.is_exists=TRUE AND f.name LIKE ?;

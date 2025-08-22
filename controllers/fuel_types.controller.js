@@ -1,5 +1,34 @@
 const db = require("../config/db.config");
 
+// Get by name
+const getFuelTypeByName = (req, res) => {
+  const { name } = req.query;
+  const searchPattern = `%${name}%`
+
+  const query = `SELECT * FROM fuel_types WHERE name LIKE ?`;
+  db.query(query, [searchPattern], (error, result) => {
+    if (error) {
+      console.log(error);
+      return res.status(500).json({
+        message: "Error getting Fuel Type by name",
+        error: "Internal Server Error",
+      });
+    }
+
+    if (!result.length) {
+      return res.status(404).json({
+        message: `Fuel Type with name '${name}' not found`,
+      });
+    }
+
+    res.json({
+      statusCode: 200,
+      message: "Fuel Type retrieved successfully",
+      data: result[0],
+    });
+  });
+};
+
 // Create
 const createFuelType = (req, res) => {
   const { name } = req.body;
@@ -124,4 +153,5 @@ module.exports = {
   getOneFuelType,
   updateFuelType,
   deleteFuelType,
+  getFuelTypeByName,
 };
