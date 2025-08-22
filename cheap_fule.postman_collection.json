@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "a136409f-67fc-4333-9cc0-fea4749f2af2",
+		"name": "cheap_fule",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46840672"
+	},
+	"item": [
+		{
+			"name": "gas stations",
+			"item": [
+				{
+					"name": "create gas stations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"GazProm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/gas_stations",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"gas_stations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get gas stations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"GazProm\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/gas_stations",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"gas_stations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update gas station",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":2,\r\n  \"name\": \"GazProm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/gas_stations/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"gas_stations",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete gas station",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"GazProm\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/gas_stations/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"gas_stations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get gas station",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"GazProm\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/gas_stations/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"gas_stations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fuel types",
+			"item": []
+		},
+		{
+			"name": "branches",
+			"item": [
+				{
+					"name": "create branches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gas_station_id\": 2,\r\n  \"name\": \"GazProm Yunusobod\",\r\n  \"address\": \"Toshkent, Yunusobod ko‘chasi 15\",\r\n  \"location\": \"41.3111,69.2797\",\r\n  \"phone_number\": \"+998901234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/branches",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get branches",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"GazProm\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/branches",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get branch",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"GazProm\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branches/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update branch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gas_station_id\": 2,\r\n  \"name\": \"GazProm Chilonzor\",\r\n  \"address\": \"Toshkent, Chilonzor ko‘chasi 20\",\r\n  \"location\": \"41.3112,69.2800\",\r\n  \"phone_number\": \"+998907654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branches/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete branch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/branches/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "station fuel types",
+			"item": [
+				{
+					"name": "create station fuel types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"gas_station_branch_id\": 2,\r\n  \"fuel_type_id\": 2,\r\n  \"price\": 8500.50,\r\n  \"is_exists\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/station_fuel_types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"station_fuel_types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get station fuel types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/station_fuel_types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"station_fuel_types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get station fuel type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/station_fuel_types/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"station_fuel_types",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update station fuel type",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gas_station_branch_id\": 2,\r\n  \"fuel_type_id\": 2,\r\n  \"price\": 8700.00,\r\n  \"is_exists\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/station_fuel_types/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"station_fuel_types",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete station fuel type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/station_fuel_types/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"station_fuel_types",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
