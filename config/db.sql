@@ -53,3 +53,12 @@ LEFT JOIN gas_station_fuel_type gst
 LEFT JOIN fuel_types f 
   ON f.id = gst.fuel_type_id
 WHERE gst.is_exists=TRUE AND f.name LIKE ?;
+
+SHOW TABLES;
+
+CREATE PROCEDURE IF NOT EXISTS selectFuelTypes()
+BEGIN
+  SELECT * FROM fuel_types;
+END
+
+CALL `selectFuelTypes`()

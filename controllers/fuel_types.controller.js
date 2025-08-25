@@ -1,5 +1,23 @@
 const db = require("../config/db.config");
 
+const getAllFuelTypesFromProc = (req, res) => {
+  db.query(`CALL selectFuelTypes()`, (error, result) => {
+    if (error) {
+      console.log(error);
+      return res.status(500).json({
+        message: "Error getting  Fuel Types",
+        error: "Internal Server Error",
+      });
+    }
+
+    res.status(200).json({
+      statusCode: 200,
+      message: "fuel types retrieved successfully",
+      data: result[0],
+    });
+  });
+};
+
 // Get by name
 const getFuelTypeByName = (req, res) => {
   const { name } = req.query;
@@ -154,4 +172,5 @@ module.exports = {
   updateFuelType,
   deleteFuelType,
   getFuelTypeByName,
+  getAllFuelTypesFromProc,
 };

@@ -4,11 +4,13 @@ const {
   getOneFuelType,
   updateFuelType,
   deleteFuelType,
-  getFuelTypeByName
+  getFuelTypeByName,
+  getAllFuelTypesFromProc,
 } = require("../controllers/fuel_types.controller");
 
 const router = require("express").Router();
 
+router.get("/proc", getAllFuelTypesFromProc);
 router.get("/search", getFuelTypeByName);
 
 router.post("/", createFuelType);
